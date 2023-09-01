@@ -13,7 +13,7 @@ import (
 
 // IsPortOpen checks if a port is open or not.
 func IsPortOpen(host, protocol string, port uint32) bool {
-	conn, err := net.DialTimeout(protocol, host+":"+strconv.Itoa(int(port)), time.Second)
+	conn, err := net.DialTimeout(protocol, host+":"+strconv.Itoa(int(port)), 10 * time.Second)
 	if err != nil {
 		return false
 	}
